@@ -1,21 +1,21 @@
-# Установка poetry https://python-poetry.org/docs/#installation
-$ poetry new . # Создание базовой структуры
-$ poetry install # Установка зависимостей
+# poetry setup https://python-poetry.org/docs/#installation
+$ poetry new . # Creating base package module structure
+$ poetry install # Setup dependencies
 
 $ cd /data/works/hexlett_fizzbuzz
 $ poetry run pytest
 -------------------
-# Ниже примерный вывод
+# Your output should be like this:
 platform darwin -- Python 3.8.2, pytest-5.4.3, py-1.10.0, pluggy-0.13.1
 rootdir: /private/tmp/hexlet_fizzbuzz
 collected 1 item
              
 tests/test_hexlet_pytest.py . [100%]
 
-# Такой вывод означает, что тест выполнился без ошибок
+# This mean the package installed correctly
 -------------------
 
-run with prints:
+run test with inner prints:
 
 $ poetry run pytest -s
 ----------------------

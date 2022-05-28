@@ -4,6 +4,7 @@
 
 ###**Install:**
 
+Check Python3 installed in your system together with `poetry` for tests (look at `poetry_info.txt`for setup)
 Clone the repository from the GitHub-origin source to any `folder`:
 ```
 cd <folder>
@@ -14,7 +15,7 @@ git clone https://github.com/ichar/hexlet_fizzbuzz
 ```
 
 ###**CLI:**
-Open bin-folder with the CLI-script
+Open bin-folder with the CLI-script and set execute-mode flag for the script
 ```
 cd /hexlet_fizzbuzz/bin
 chmod +x ./fizz_buzz
@@ -53,7 +54,7 @@ and run it:
 Run the ClI(examples):
   run from 0 to 100 range:
 ```
-  ./fizzbuzz 0 100
+  ./fizz_buzz 0 100
 ```
   check number 99 only:
 ```
