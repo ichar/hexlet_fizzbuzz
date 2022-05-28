@@ -16,8 +16,8 @@ run it:
 ./fizz_buzz
 ```
 
-###Help
-
+**###Help**
+```
 -> HEXLET FizzBuzz script
 --> 
 --> python3 fizzbuz.py [{-i|-c|-r|-t|-h}] [start [finish]]
@@ -39,8 +39,8 @@ run it:
 --> 
 --> For tests run -t (module inner tests) or poetry branch from the root-pakage directory:
 -->      poetry run pytest -s
-
-###Usage options:
+```
+**###Usage options:**
 
 ```
   ./fizzbuzz 0 100
