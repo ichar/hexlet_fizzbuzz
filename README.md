@@ -46,7 +46,7 @@ and run it:
 --> 
 --> start and finish should be an integer>=0, by default 0.
 --> 
---> For tests run -t (module inner tests) or poetry branch from the root-pakage directory:
+--> For tests run -t (module inner tests) or poetry branch from the root-package directory:
 -->      poetry run pytest -s
 ```
 ###**Usage options:**
@@ -67,5 +67,23 @@ Run the ClI(examples):
 
 **##Tests**
   -t: runs inner test mode (self tests) or use poetry as written above
+
+  4) self-tests:
+```
+  ./fizz_buzz -t
+```
+Self-tests is valid if you'll get message:'Inner Tests OK'
+
+  5) poetry-tests with script-prints:
+```
+  poetry run pytest -s
+```
+Poentry test s valid with these outputs:
+tests/test_fizzbuzz.py >>>FizzBuzz Tests started.
+...
+.>>>FizzBuzz Tests completed successfully.
+
+
+
 
 [Author] (https://ru.hexlet.io/u/mkarox)
