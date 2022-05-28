@@ -72,16 +72,19 @@ Run the ClI(examples):
 ```
   ./fizz_buzz -t
 ```
-Self-tests is valid if you'll get message:'Inner Tests OK'
+Self-tests is valid if you'll get message:
+
+>Inner Tests OK
 
   5) poetry-tests with script-prints:
 ```
   poetry run pytest -s
 ```
-Poentry test s valid with these outputs:
-tests/test_fizzbuzz.py >>>FizzBuzz Tests started.
-...
-.>>>FizzBuzz Tests completed successfully.
+Poentry tests are valid with these outputs:
+
+>tests/test_fizzbuzz.py >>>FizzBuzz Tests started.
+>...
+>.>>>FizzBuzz Tests completed successfully.
 
 
 
