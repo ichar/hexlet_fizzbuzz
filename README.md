@@ -48,9 +48,16 @@ and run it:
 ###**Usage options:**
 
 Run the ClI(examples):
+  run from 0 to 100 range:
 ```
   ./fizzbuzz 0 100
+```
+  check number 99 only:
+```
   ./fizz_buzz -c 99
+```
+ run with interactive:
+```
   ./fizz_buzz -i
 ```
 
