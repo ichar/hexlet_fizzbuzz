@@ -52,15 +52,15 @@ and run it:
 ###**Usage options:**
 
 Run the ClI(examples):
-  run from 0 to 100 range:
+  1) print results from 0 to 100 range:
 ```
   ./fizz_buzz 0 100
 ```
-  check number 99 only:
+  2) check number 99 only:
 ```
   ./fizz_buzz -c 99
 ```
- run with interactive:
+  3) run with interactive mode:
 ```
   ./fizz_buzz -i
 ```
