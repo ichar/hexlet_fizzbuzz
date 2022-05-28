@@ -4,9 +4,12 @@
 
 ###**Install:**
 
-Clone repository from the GitHub-origin source to any <folder>:
+Clone the repository from the GitHub-origin source to any `folder`:
 ```
 cd <folder>
+```
+
+```
 git clone https://github.com/ichar/hexlet_fizzbuzz
 ```
 
