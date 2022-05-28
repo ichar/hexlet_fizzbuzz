@@ -2,21 +2,22 @@
 
 ##HEXLET FizzBuzz test for [test job](https://hexlet-ru.notion.site/8b301b64d4834a3e91f709f8ada1187a)
 
-##**Install**
+###**Install:**
 
 Clone repository from the GitHub-origin source to any folder.
 
-###**CLI**
+###**CLI:**
+Open bin-folder with the CLI-script
 ```
 cd /bin
 chmod +x ./fizz_buzz
 ```
-run it:
+and run it:
 ```
 ./fizz_buzz
 ```
 
-**###Help**
+###**Help:**
 ```
 -> HEXLET FizzBuzz script
 --> 
@@ -40,8 +41,9 @@ run it:
 --> For tests run -t (module inner tests) or poetry branch from the root-pakage directory:
 -->      poetry run pytest -s
 ```
-**###Usage options:**
+###**Usage options:**
 
+Run the ClI(examples):
 ```
   ./fizzbuzz 0 100
   ./fizz_buzz -c 99
