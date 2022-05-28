@@ -3,3 +3,13 @@
 import glob
 import sys
 import os
+
+
+src = os.path.normpath(os.path.join(os.path.realpath(__file__), "../..", "src"))
+
+sys.path.insert(0, src)
+
+if __name__ == "__main__":
+    from fizzbuzz import main
+
+    main()

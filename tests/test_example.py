@@ -3,10 +3,10 @@ from src.example import reverse
 IsDebug = 0
 IsTrace = 1
 
-def test_start():
 
+def test_start():
     if IsTrace:
-       print('>>>Tests started.')
+       print('>>>Example Tests started.')
 
 def test_reverse():
     assert reverse('!dlroW ,olleH') == 'Hello, World!'
@@ -31,4 +31,4 @@ def test_reverse_for_empty_string():
 def test_finish():
 
     if IsTrace:
-       print('>>>Tests completed successfully.')
+       print('>>>Example Tests completed successfully.')
