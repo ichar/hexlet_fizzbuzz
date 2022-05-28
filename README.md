@@ -6,14 +6,17 @@
 
 Clone repository from the GitHub-origin source to any folder.
 
-##CLI
-
+###CLI
+```
 cd /bin
 chmod +x ./fizz_buzz
+```
 run it:
+```
 ./fizz_buzz
+```
 
-##Help
+###Help
 
 -> HEXLET FizzBuzz script
 --> 
@@ -37,16 +40,13 @@ run it:
 --> For tests run -t (module inner tests) or poetry branch from the root-pakage directory:
 -->      poetry run pytest -s
 
-##Usage options:
+###Usage options:
 
-  [-r] start finish: print results for given values range
-  -c value: print result for given value only
-  -i: interactive mode, check value will be requested from console
-
+```
   ./fizzbuzz 0 100
   ./fizz_buzz -c 99
   ./fizz_buzz -i
-
+```
 
 ##Tests
   -t: runs inner test mode (self tests) or use poetry as written above
