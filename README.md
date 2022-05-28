@@ -13,7 +13,7 @@ git clone https://github.com/ichar/hexlet_fizzbuzz
 ###**CLI:**
 Open bin-folder with the CLI-script
 ```
-cd <folder>/hexlet_fizzbuzz/bin
+cd /hexlet_fizzbuzz/bin
 chmod +x ./fizz_buzz
 ```
 and run it:
