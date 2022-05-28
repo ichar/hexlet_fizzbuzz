@@ -4,12 +4,16 @@
 
 ###**Install:**
 
-Clone repository from the GitHub-origin source to any folder.
+Clone repository from the GitHub-origin source to any <folder>:
+```
+cd <folder>
+git clone https://github.com/ichar/hexlet_fizzbuzz
+```
 
 ###**CLI:**
 Open bin-folder with the CLI-script
 ```
-cd /bin
+cd <folder>/hexlet_fizzbuzz/bin
 chmod +x ./fizz_buzz
 ```
 and run it:
