@@ -7,11 +7,11 @@ import sys
 
 IS_V3 = sys.version_info[0] > 2 and True or False
 
-
 _VERSION_ = '1.0 with tests Python3, https://ru.hexlet.io/u/mkarox'
 
 ISDEBUG = 0
 ISTRACE = 1
+
 
 def check(x):
     """
@@ -27,19 +27,20 @@ def check(x):
     out = ''
     if x <= 0:
         pass
-    s= not ISDEBUG and f"{x}:" or ''
+    s = not ISDEBUG and f"{x}:" or ''
     if ISTRACE:
         print(f"Trace:{x}")
-    if x%15 == 0:
-        out=f"{s}FizzBuzz"
-    elif x%5 == 0:
-        out =f"{s}Buzz"
-    elif x%3 == 0:
-        out=f"{s}Fizz"
+    if x % 15 == 0:
+        out = f"{s}FizzBuzz"
+    elif x % 5 == 0:
+        out = f"{s}Buzz"
+    elif x % 3 == 0:
+        out = f"{s}Fizz"
 
     if out:
         print(out)
     return out
+
 
 def walk(v1, v2=0, **kw):
     """
@@ -66,7 +67,7 @@ def walk(v1, v2=0, **kw):
         print('walk...')
     out = []
     begin = v1 if v1 > 0 else 0
-    end = v2+1 if v2>0 else v1+1
+    end = v2 + 1 if v2 > 0 else v1 + 1
     for x in range(begin, end):
         out.append(check(x))
 
@@ -75,6 +76,7 @@ def walk(v1, v2=0, **kw):
         print('Trace out:', out)
     return out
 
+
 def interactive():
     """
         Runs interactive script mode
@@ -82,10 +84,11 @@ def interactive():
     if ISTRACE:
         print('interactive...')
     while True:
-        x=input('Type an integer, please, or q for exit:')
+        x = input('Type an integer, please, or q for exit:')
         if x == 'q' or not x.isdigit():
             return
         check(int(x))
+
 
 def inner_tests():
     """
@@ -93,10 +96,11 @@ def inner_tests():
     """
     if ISTRACE:
         print('inner_tests...')
-    assert ':'.join(walk(0,12, debug=1)) == 'FizzBuzz:Fizz:Buzz:Fizz:Fizz:Buzz:Fizz'
+    assert ':'.join(walk(0, 12, debug=1)) == 'FizzBuzz:Fizz:Buzz:Fizz:Fizz:Buzz:Fizz'
     assert ':'.join(walk(100, debug=1, trace=0)) == 'Buzz'
-    
+
     print('Inner Tests OK')
+
 
 def inner_help():
     """
@@ -115,16 +119,16 @@ def inner_help():
 
     print('--> HEXLET FizzBuzz script')
     print('--> ')
-    print('--> python3 fizzbuz.py [{-i|-c|-r|-t|-h}] [start [finish]]')
+    print('--> python3 fizzbuzz.py [{-i|-c|-r|-t|-h}] [start [finish]]')
     print('--> ')
     print('--> -i: interactive mode with type a number request')
-    print('--> example:fizzbuz.py -i')
+    print('--> example:fizzbuzz.py -i')
     print('--> ')
     print('--> -c: only check a given start value')
-    print('--> example:fizzbuz.py -c 21')
+    print('--> example:fizzbuzz.py -c 21')
     print('--> ')
     print('--> -r: walk through the values range from start to finish, can be omitted')
-    print('--> example:fizzbuz.py -r 0 100 or fizzbuz.py 0 100')
+    print('--> example:fizzbuzz.py -r 0 100 or fizzbuzz.py 0 100')
     print('--> ')
     print('--> -t: self tests')
     print('--> ')
@@ -132,8 +136,8 @@ def inner_help():
     print('--> ')
     print('--> start and finish should be an integer>=0, by default 0.')
     print('--> ')
-    print('--> For tests run -t (module inner tests) or poetry branch from the root-pakage directory:')
-    print('-->      poetry run pytest -s') 
+    print('--> For tests run -t (module inner tests) or poetry branch from the root-package directory:')
+    print('-->      poetry run pytest -s')
     print('--> ')
     print('--> ')
     print('--> %s' % _VERSION_)
@@ -142,7 +146,7 @@ def inner_help():
 
 def main():
     """
-        Main script enter point. Check arguments passed in comman line 
+        Main script enter point. Check arguments passed in command line
         and runs it in the given mode.
 
         Nothing returns.
@@ -160,22 +164,22 @@ def main():
         print('main...')
 
     argv = sys.argv
-#
-#   CHECK HELP
-#
+    #
+    #   CHECK HELP
+    #
     if len(argv) == 1 or argv[1].lower() in ('/h', '-h', 'help', '--help', '/?', '-?'):
         sys.exit(inner_help())
-#
-#   START SCRIPT
-#
-#   Options:
+    #
+    #   START SCRIPT
+    #
+    #   Options:
     is_interact = 0
     is_check = 0
     is_range = 0
     is_test = 0
-#   Data to iterate
+    #   Data to iterate
     start = finish = None
-#   Parsing of arguments...
+    #   Parsing of arguments...
     for arg in argv[1:]:
         if arg.startswith('-'):
             if arg == '-i':
@@ -188,9 +192,9 @@ def main():
                 is_test = 1
         elif arg.isdigit():
             if start is None:
-                start=int(arg)
+                start = int(arg)
             elif is_range or not is_check:
-                finish=int(arg)
+                finish = int(arg)
                 is_range = 1
                 is_check = 0
 
@@ -204,7 +208,7 @@ def main():
     elif is_check:
         check(start)
     else:
-        walk(start,finish, trace=0)
+        walk(start, finish, trace=0)
 
 
 if __name__ == "__main__":

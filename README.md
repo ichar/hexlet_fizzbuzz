@@ -29,16 +29,16 @@ and run it:
 ```
 -> HEXLET FizzBuzz script
 --> 
---> python3 fizzbuz.py [{-i|-c|-r|-t|-h}] [start [finish]]
+--> python3 fizzbuzz.py [{-i|-c|-r|-t|-h}] [start [finish]]
 --> 
 --> -i: interactive mode with type a number request
---> example:fizzbuz.py -i
+--> example:fizzbuzz.py -i
 --> 
 --> -c: only check a given start value
---> example:fizzbuz.py -c 21
+--> example:fizzbuzz.py -c 21
 --> 
 --> -r: walk through the values range from start to finish, can be omitted
---> example:fizzbuz.py -r 0 100 or fizzbuz.py 0 100
+--> example:fizzbuzz.py -r 0 100 or fizzbuzz.py 0 100
 --> 
 --> -t: self tests
 --> 
