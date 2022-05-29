@@ -8,64 +8,86 @@ import sys
 is_v3 = sys.version_info[0] > 2 and True or False
 
 
-version = '1.0 with tests Python3, https://ru.hexlet.io/u/mkarox'
+_VERSION_ = '1.0 with tests Python3, https://ru.hexlet.io/u/mkarox'
 
-config = {}
-
-EOL = '\n'
-
-IsDebug = 0
-IsTrace = 1
+ISDEBUG = 0
+ISTRACE = 1
 
 def check(x):
-    if IsTrace:
+    """
+        Checks a number and print results or return it.
+        
+        Arguments:
+            x -- int, nimber to check, x >= 0
+        Returns:
+            results string code as {Fizz|Buzz|FizzBuzz} or nothing (empty string)
+    """
+    if ISTRACE:
         print(f"check:{x}...")
     out = ''
     if x <= 0:
         pass
-    s= not IsDebug and f"{x}:" or ''
-    #if IsTrace:
-    #    print(f"Trace:{x}")
+    s= not ISDEBUG and f"{x}:" or ''
+    if ISTRACE:
+        print(f"Trace:{x}")
     if x%15 == 0:
-        out=(f"{s}FizzBuzz")
+        out=f"{s}FizzBuzz"
     elif x%5 == 0:
-        out =(f"{s}Buzz")
+        out =f"{s}Buzz"
     elif x%3 == 0:
-        out=(f"{s}Fizz")
+        out=f"{s}Fizz"
 
     if out:
         print(out)
     return out
 
 def walk(v1, v2=0, **kw):
-    global IsDebug, IsTrace
-    IsDebug=kw.get('debug', 0)
-    IsTrace=kw.get('trace', 0)
-    if IsTrace:
+    """
+        Iterates given numbersequences from v1 to v2 and shecks the result.
+        
+        Arguments:
+            v1 -- int, start from this
+            v2 -- int, finish to this
+        Keyword arguments:
+            debug -- bool or 1|0, set ISDEBUG option (prints prefered value to check in output such as 21:'21:Fizz')
+            trace -- bool or 1|0, set ISTRACE option (prints script's trace output: Trace:....)
+
+        Returns:
+            out -- str: final script's result-string as join any given values to check specially for tests
+    """
+    global ISDEBUG, ISTRACE
+    ISDEBUG=kw.get('debug', 0)
+    ISTRACE=kw.get('trace', 0)
+    if ISTRACE:
         print('walk...')
     out = []
-    begin = v1 and v1 > 0 and v1 or 0
-    end = v2>0 and v2+1 or v1+1
+    begin = v1 if v1 > 0 else 0
+    end = v2+1 if v2>0 else v1+1
     for x in range(begin, end):
         out.append(check(x))
 
     out = [x for x in out if x]
-    if IsTrace:
+    if ISTRACE:
         print('Trace out:', out)
     return out
 
 def interactive():
-    if IsTrace:
+    """
+        Runs interactive script mode
+    """
+    if ISTRACE:
         print('interactive...')
     while True:
         x=input('Type an integer, please, or q for exit:')
         if x == 'q' or not x.isdigit():
             return
-        else:
-            check(int(x))
+        check(int(x))
 
 def inner_tests():
-    if IsTrace:
+    """
+        Inner tests (self-tests)
+    """
+    if ISTRACE:
         print('inner_tests...')
     assert ':'.join(walk(0,12, debug=1)) == 'FizzBuzz:Fizz:Buzz:Fizz:Fizz:Buzz:Fizz'
     assert ':'.join(walk(100, debug=1, trace=0)) == 'Buzz'
@@ -73,7 +95,7 @@ def inner_tests():
     print('Inner Tests OK')
 
 def help():
-    if IsTrace:
+    if ISTRACE:
         print('help...')
 
     print('--> HEXLET FizzBuzz script')
@@ -99,12 +121,21 @@ def help():
     print('-->      poetry run pytest -s') 
     print('--> ')
     print('--> ')
-    print('--> %s' % version)
+    print('--> %s' % _VERSION_)
     return 0
     
 
 def main():
-    if IsTrace:
+    """
+        Main script enter point. Check arguments passed in comman line and runs it in the given mode.
+        
+        Retuns nothing.
+        
+        Flags:
+            ISDEBUG: 1|0 runs debug mode during scripr running.
+            ISTRACE: 1|0 prints script Trace output in the execution points (look at the docstrings above).
+    """
+    if ISTRACE:
         print('main...')
 
     argv = sys.argv
@@ -142,7 +173,7 @@ def main():
                 is_range = 1
                 is_check = 0
 
-    if IsTrace:
+    if ISTRACE:
         print(f"Trace Data:{start}:{finish}")
 
     if is_test:
