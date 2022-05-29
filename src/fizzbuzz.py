@@ -95,6 +95,17 @@ def inner_tests():
     print('Inner Tests OK')
 
 def help():
+    """
+        Prints help for the script.
+        
+        Valid command line options for activate: 
+            /h, 
+            -h, 
+            help, 
+            --help, 
+            /?, 
+            -?
+    """
     if ISTRACE:
         print('help...')
 
@@ -123,7 +134,7 @@ def help():
     print('--> ')
     print('--> %s' % _VERSION_)
     return 0
-    
+
 
 def main():
     """
@@ -183,7 +194,7 @@ def main():
     elif is_check:
         check(start)
     else:
-        walk(start,finish or 0, trace=0)
+        walk(start,finish, trace=0)
 
 
 if __name__ == "__main__":
