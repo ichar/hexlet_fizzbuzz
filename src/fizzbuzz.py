@@ -1,11 +1,11 @@
 import sys
 
-#
+# Hexlet Python Mentor test job:
 # https://hexlet-ru.notion.site/8b301b64d4834a3e91f709f8ada1187a
 #
 
 
-is_v3 = sys.version_info[0] > 2 and True or False
+IS_V3 = sys.version_info[0] > 2 and True or False
 
 
 _VERSION_ = '1.0 with tests Python3, https://ru.hexlet.io/u/mkarox'
@@ -16,11 +16,11 @@ ISTRACE = 1
 def check(x):
     """
         Checks a number and print results or return it.
-        
+
         Arguments:
             x -- int, nimber to check, x >= 0
         Returns:
-            results string code as {Fizz|Buzz|FizzBuzz} or nothing (empty string)
+            results string code as {Fizz|Buzz|FizzBuzz} or empty string
     """
     if ISTRACE:
         print(f"check:{x}...")
@@ -43,21 +43,25 @@ def check(x):
 
 def walk(v1, v2=0, **kw):
     """
-        Iterates given numbersequences from v1 to v2 and shecks the result.
-        
+        Iterates given number sequences from v1 to v2 and checks 
+        the results.
+
         Arguments:
             v1 -- int, start from this
             v2 -- int, finish to this
         Keyword arguments:
-            debug -- bool or 1|0, set ISDEBUG option (prints prefered value to check in output such as 21:'21:Fizz')
-            trace -- bool or 1|0, set ISTRACE option (prints script's trace output: Trace:....)
+            debug -- bool or 1|0, set ISDEBUG option (prints prefered 
+                        value to check in output such as 21:'21:Fizz')
+            trace -- bool or 1|0, set ISTRACE option (prints script's 
+                        trace output: Trace:....)
 
         Returns:
-            out -- str: final script's result-string as join any given values to check specially for tests
+            out -- str: final script's result-string as join any given 
+                    values to check specially for tests
     """
     global ISDEBUG, ISTRACE
-    ISDEBUG=kw.get('debug', 0)
-    ISTRACE=kw.get('trace', 0)
+    ISDEBUG = kw.get('debug', 0)
+    ISTRACE = kw.get('trace', 0)
     if ISTRACE:
         print('walk...')
     out = []
@@ -94,10 +98,10 @@ def inner_tests():
     
     print('Inner Tests OK')
 
-def help():
+def inner_help():
     """
         Prints help for the script.
-        
+
         Valid command line options for activate: 
             /h, 
             -h, 
@@ -138,14 +142,20 @@ def help():
 
 def main():
     """
-        Main script enter point. Check arguments passed in comman line and runs it in the given mode.
-        
-        Retuns nothing.
-        
-        Flags:
-            ISDEBUG: 1|0 runs debug mode during scripr running.
-            ISTRACE: 1|0 prints script Trace output in the execution points (look at the docstrings above).
+        Main script enter point. Check arguments passed in comman line 
+        and runs it in the given mode.
+
+        Nothing returns.
+
+        Script's Global Flags:
+            ISDEBUG: 1|0 runs debug mode during script running.
+            ISTRACE: 1|0 prints script Trace output in the execution 
+            points (look at the docstrings above).
     """
+    if not IS_V3:
+        print('Sorry. The script is not convenient for interpreter version'
+              'Please install Python3.')
+        sys.exit(-1)
     if ISTRACE:
         print('main...')
 
@@ -154,7 +164,7 @@ def main():
 #   CHECK HELP
 #
     if len(argv) == 1 or argv[1].lower() in ('/h', '-h', 'help', '--help', '/?', '-?'):
-        sys.exit(help())
+        sys.exit(inner_help())
 #
 #   START SCRIPT
 #
@@ -190,7 +200,7 @@ def main():
     if is_test:
         inner_tests()
     elif is_interact:
-          interactive()
+        interactive()
     elif is_check:
         check(start)
     else:
