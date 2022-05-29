@@ -18,7 +18,7 @@ def check(x):
         Checks a number and print results or return it.
 
         Arguments:
-            x -- int, nimber to check, x >= 0
+            x -- int, number to check, x >= 0
         Returns:
             results string code as {Fizz|Buzz|FizzBuzz} or empty string
     """
@@ -51,7 +51,7 @@ def walk(v1, v2=0, **kw):
             v1 -- int, start from this
             v2 -- int, finish to this
         Keyword arguments:
-            debug -- bool or 1|0, set ISDEBUG option (prints prefered 
+            debug -- bool or 1|0, set ISDEBUG option (prints preffered
                         value to check in output such as 21:'21:Fizz')
             trace -- bool or 1|0, set ISTRACE option (prints script's 
                         trace output: Trace:....)
